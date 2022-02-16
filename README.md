@@ -52,5 +52,12 @@ as a user
 so I can keep track of my reading
 I want to see a list of bookmarks
 
+as a user
+so I can keep track of my favourite places to visit
+I want to add a bookmark
+
 https://github.com/makersacademy/course/blob/main/bookmark_manager/walkthroughs/01.md
 
+## Domain Model
+
+![](images/domainModel.png)
