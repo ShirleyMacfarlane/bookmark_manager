@@ -8,7 +8,8 @@ class BookmarkManager < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  enable :sessions
+  enable :sessions, :method_override
+
 
   get '/bookmarks' do
     @bookmarks = Bookmark.all
@@ -18,6 +19,21 @@ class BookmarkManager < Sinatra::Base
   get '/bookmarks/new' do
    erb :'bookmarks/new'
   end
+
+  delete '/bookmarks/:id' do
+    Bookmark.delete(id: params[:id])
+    redirect '/bookmarks'
+   end
+
+   get '/bookmarks/edit/:id' do
+    @id = params[:id]
+    erb :'bookmarks/edit'
+   end
+
+   patch '/edit_bookmarks/:id' do
+    Bookmark.update(id: params[:id], url: params[:url], title: params[:title])
+    redirect '/bookmarks'
+   end
 
   post '/bookmarks' do
     # return from bookmarks new

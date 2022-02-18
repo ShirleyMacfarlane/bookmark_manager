@@ -61,3 +61,4 @@ https://github.com/makersacademy/course/blob/main/bookmark_manager/walkthroughs/
 ## Domain Model
 
 ![](images/domainModel.png)
+
